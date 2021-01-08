@@ -1,0 +1,131 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#introduction-img {
+    padding-top: 8.2rem;
+}
+
+.col-md-8 .intro-name {
+    padding-top: 8.2rem;
+}
+
+.btn-light-blue {
+    background-color: #03a9f4;
+    width: 10rem;
+    height: 3rem;
+    font-weight: 400 !important;
+    color: white;
+    border-radius: 22px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-dark {
+    background-color: #080808;
+    width: 10rem;
+    height: 3rem;
+    font-weight: 400 !important;
+    color: white;
+    border-radius: 22px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-grey {
+    background-color: #757575;
+    width: 75%;
+    height: 3rem;
+    font-weight: 400 !important;
+    color: white;
+    border-radius: 22px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-light-blue:hover {
+    font-weight: 650 !important;
+    box-shadow: rgba(0, 0, 0, 0.21) 0px 1px 3px;
+    color: white;
+}
+
+.btn-dark:hover {
+    font-weight: 650 !important;
+    box-shadow: rgba(0, 0, 0, 0.21) 0px 1px 3px;
+    color: white;
+}
+
+.btn-grey:hover {
+    font-weight: 650 !important;
+    box-shadow: rgba(0, 0, 0, 0.21) 0px 1px 3px;
+    color: white;
+}
+
+.navbar-brand {
+    color: black !important;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: black !important;
+    font-weight: 550;
+}
+
+.nav-link:hover {
+    font-weight: 600;
+}
+
+nav {
+    min-height: 8vh;
+    background-color: #f8f8ff;
+}
+
+.introduction-message {
+    min-height: 92vh;
+    background-color: #f8f8ff;
+}
+
+.full-height {
+    padding-top: 7%;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: #222;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* margin-top: 5rem; */
+}
+
+.footer-box {
+    background-color: #333;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 47px;
+}
+
+.back-to-top {
+    text-decoration: none;
+}
+
+.back-to-top i {
+    color: white;
+    font-size: 1.3em;
+}
+
+.back-to-top:hover {
+    font-weight: 600;
+}
+
+.experience {
+    background-color: #f8f8ff;
+}
+
+.experience h5 {
+    font-weight: 600;
+}
+
+.profile-pic {
+    border-radius: 50%;
+}
