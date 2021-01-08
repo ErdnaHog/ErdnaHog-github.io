@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Andre's Portfolio</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="" class="navbar-brand logo">Andre</a>
+        <div class="collapse navbar-collapse justify-content-end" id="">
+            <ul class=" navbar-nav mr-auto  ">
+                <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Github</a></li>
+                <li class="nav-item"><a href="" class="nav-link">LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="introduction-message">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="intro-name">Hi, my name is Andre,</p>
+                    <div class="intro-short-description">
+                        <p>
+                            I am a
+                            <span class="typewriter"></span>
+                            <span class="typed-cursor">|</span>
+                        </p>
+                    </div>
+                    <p class="intro-long-description">
+                        I love doing.jkasldfjdlaskfjkasdjklf;ajskdlfad;skjfklajklfajsdkl;fjakljkasfldasljk.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media0.giphy.com/media/wKFY1XaNEainm/giphy.gif" alt="cat gif">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script>
+
+    let speed = 50;
+
+    const navSlide = () => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = ''
+                }
+                else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 9 + 0.7}s`;
+                }
+            })
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        })
+
+    }
+
+    // The typewriter element
+    var typeWriterElement = document.getElementsByClassName("typewriter")[0];
+    // The cursor element
+    var cursorElement = document.getElementsByClassName("typed-cursor")[0];
+
+    // The TextArray:
+    var textArray = ["Web Developer", "hi"];
+
+    // function to generate the backspace effect
+    function delWriter(text, i, cb) {
+        if (i >= 0 ) {
+            typeWriterElement.innerHTML = text.substring(0, i--);
+            setTimeout(function() {
+                delWriter(text, i, cb);
+            },speed);
+        } else if (typeof cb == 'function') {
+            setTimeout(cb,1000);
+        }
+    }
+
+    // function to generate the keyhitting effect
+    function typeWriter(text, i, cb) {
+        if ( i < text.length+1 ) {
+            typeWriterElement.innerHTML = text.substring(0, i++);
+            // generate a random Number to emulate Typing on the Keyboard.
+            setTimeout( function () {
+                typeWriter(text, i++, cb)
+            },speed);
+        } else if (i === text.length+1) {
+            setTimeout( function () {
+                cursorElement.classList.toggle("blink");
+            },0);
+             setTimeout( function () {
+                 cursorElement.classList.toggle("blink");
+             },1000);
+            setTimeout( function () {
+                delWriter(text, i, cb)
+            },1000);
+        }
+    }
+
+    // the main writer function
+    function StartWriter(i) {
+        if (typeof textArray[i] == "undefined") {
+            setTimeout( function () {
+                StartWriter(0)
+            },500);
+        } else if(i < textArray[i].length+1) {
+            typeWriter(textArray[i], 0, function () {
+                StartWriter(i+1);
+            });
+        }
+    }
+    // wait half a second then start the typewriter
+    setTimeout( function () {
+        StartWriter(0);
+    },500);
+
+    navSlide();
+</script>
+</body>
+</html>
